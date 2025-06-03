@@ -1,8 +1,3 @@
-import React from 'react'
-
-// components
-import SkillCard from './SkillCard'
-
 // images
 import { FaFigma } from "react-icons/fa6";
 import { FaCss3Alt } from "react-icons/fa";

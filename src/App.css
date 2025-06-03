@@ -17,8 +17,14 @@
 
 /* responsive */
 
-/* @media (max-width:768px) {
-   .headline-1 {
-    text-align: center;
-   }
-} */
+@media (max-width: 640px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+@media (min-width: 641px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  }
+}

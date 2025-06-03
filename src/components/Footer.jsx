@@ -1,10 +1,4 @@
-const sitemap = [
-  { label: "Home", link: "#home" },
-  { label: "About", link: "#about" },
-  { label: "Work", link: "#work" },
-  { label: "Reviews", link: "#reviews" },
-  { label: "Contact", link: "#contact" },
-];
+import { sitemap } from "../utils/sitemap";
 
 const Footer = () => {
   return (
@@ -16,11 +10,13 @@ const Footer = () => {
             <h2 className="headline-1 mb-8 lg:max-w-[15ch]">
               Transform Your Vision into Reality
             </h2>
-            <button className="btn btn-primary">Work with Me</button>
+            <a href="https://t.me/odilbekdev">
+              <button className="btn btn-primary">Work with Me</button>
+            </a>
           </div>
 
           <div className="mb-10">
-            <ul className="flex gap-10 mt-10">
+            <ul className="flex flex-wrap gap-10 mt-10">
               {sitemap.map(({ label, link }, key) => (
                 <li key={key} className="flex">
                   <a

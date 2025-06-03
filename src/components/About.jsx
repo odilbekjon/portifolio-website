@@ -1,18 +1,6 @@
-
-
-// images 
+import { AboutItems } from "../utils/aboutItems";
 import { LuArrowUpRight } from "react-icons/lu";
 
-const AboutItems = [
-    {
-        label:'Project done',
-        number:5,
-    },
-    {
-        label:'Years of experience',
-        number:3,
-    },
-]
 
 const About = () => {
   return (
