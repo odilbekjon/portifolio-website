@@ -1,4 +1,3 @@
-import React from 'react'
 import ProjectCard from './ProjectCard';
 
 // images
@@ -50,35 +49,27 @@ const works = [
 
 const Work = () => {
   return (
-    <section
-     id='work'
-     className='section'
-     data-aos="fade-up"
-    >
-        <div className="container">
-            <h2 className='headline-2 mb-5'>
-                My portifolio 
-            </h2>
+    <section id="work" className="section" data-aos="fade-up">
+      <div className="container">
+        <h2 className="headline-2 mb-5">My portifolio</h2>
 
-            <div className="gap-x-4 gap-y-5 grid grid-cols-[repeat(auto-fill,_minmax(450px,_1fr))]">
-                {
-                    works?.map(({imgSrc, title, tags, projectLink}, key) => {
-                        return(
-                            <ProjectCard
-                            key={key}
-                            imgSrc={imgSrc}
-                            title={title}
-                            tags={tags}
-                            projectLink={projectLink}
-                            />
-                        )
-                    })
-                }
-            </div>
+        <div className="grid gap-5 grid-cols-[repeat(auto-fit,_minmax(400px,_1fr))]">
+          {works?.map(({ imgSrc, title, tags, projectLink }, key) => {
+            return (
+              <ProjectCard
+                key={key}
+                imgSrc={imgSrc}
+                title={title}
+                tags={tags}
+                projectLink={projectLink}
+                className=""
+              />
+            );
+          })}
         </div>
-        
+      </div>
     </section>
-  )
+  );
 }
 
 export default Work

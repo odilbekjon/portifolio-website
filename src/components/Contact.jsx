@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
 
 // images
@@ -59,11 +59,11 @@ const Contact = () => {
           </div>
 
           <form onSubmit={handleSubmit} className="">
-            <div className="flex gap-5 mb-5 md:grid md:items-center md:grid-cols-2">
+            <div className="flex flex-col gap-5 mb-5 md:grid md:grid-cols-2">
               <div className="">
                 <label htmlFor="name" className='label'>Name</label>
                 <input
-                  className='text-field p-3 rounded-lg bg-transparent border-2 border-solid outline-none mt-2'
+                  className='w-full text-field p-3 rounded-lg bg-transparent border-2 border-solid outline-none mt-2'
                   type="text"
                   name='name'
                   id='name'
@@ -77,7 +77,7 @@ const Contact = () => {
               <div className="">
                 <label htmlFor="email" className='label'>Email</label>
                 <input
-                  className='text-field p-3 rounded-lg bg-transparent border-2 border-solid outline-none mt-2'
+                  className='w-full text-field p-3 rounded-lg bg-transparent border-2 border-solid outline-none mt-2'
                   type="email"
                   name='email'
                   id='email'

@@ -1,4 +1,3 @@
-import React from 'react';
 import { FaDownload } from "react-icons/fa6";
 import { motion } from 'framer-motion';
 import { Typewriter } from 'react-simple-typewriter';
@@ -55,7 +54,7 @@ const Hero = () => {
                 </div>
             </div>
 
-            <div className="xs:mt-20">
+            <div className="mt-20 lg:mt-0">
                 <figure className='w-full max-w-[480px] ml-auto bg-gradient-to-t from-sky-400 via-25% via-sky-400 to-65% rounded-[165px] overflow-hidden'>
                     <img className='rounded-md w-full h-auto' src={person} width={550} height={200} alt="person" />
                 </figure>

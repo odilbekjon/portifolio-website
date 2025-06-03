@@ -34,13 +34,13 @@ const About = () => {
 
                     <p className="text-zinc-300 mb-4 md:mb-8 md:text-xl w-[800px] leading-5 lg:w-full md:w-[600px] md:mt-5 sm:w-[500px] xs:w-[400px] ms:w-[250px]">
                         About Me
-                            Hello! I'm a passionate front-end developer with 3 years of experience crafting interactive and user-friendly websites. I specialize in creating responsive designs that adapt beautifully across all devices.
+                            Hello! I am a passionate front-end developer with 3 years of experience crafting interactive and user-friendly websites. I specialize in creating responsive designs that adapt beautifully across all devices.
 
-                            I enjoy turning complex problems into simple, elegant solutions. Whether it's building sleek interfaces or optimizing performance, I strive to make the web a better place—one project at a time.
+                            I enjoy turning complex problems into simple, elegant solutions. Whether it is building sleek interfaces or optimizing performance, I strive to make the web a better place—one project at a time.
 
-                            Currently, I'm working at Record IT, where I've contributed to several client projects and am now involved in developing a large-scale platform for training centers.
+                            Currently, I am working at Record IT, where I have contributed to several client projects and am now involved in developing a large-scale platform for training centers.
 
-                            When I'm not coding, you can find me exploring new technologies or participating in web development events.
+                            When I am not coding, you can find me exploring new technologies or participating in web development events.
 
                             Let’s build something amazing together!
                     </p>
