@@ -3,128 +3,138 @@
 @tailwind utilities;
 
 :root {
-    --main-color:black;
-    --white-color:white;
+  --main-color: #050816;
+  --accent-color: #38bdf8;
+  --accent-strong: #818cf8;
+  --surface: rgba(15, 23, 42, 0.8);
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
 }
-  
+
 * {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    text-decoration: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
 }
-  
+
 html {
-    overflow-x: hidden;
-    scroll-behavior: smooth;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
-  
+
 body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
-    font-style: normal;
-    overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  color: var(--text-main);
+  background:
+    radial-gradient(circle at top left, rgba(56, 189, 248, 0.18), transparent 24%),
+    radial-gradient(circle at top right, rgba(129, 140, 248, 0.2), transparent 24%),
+    linear-gradient(135deg, #020617 0%, #050816 50%, #0f172a 100%);
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.35), transparent 90%);
+}
+
+::selection {
+  background: rgba(56, 189, 248, 0.35);
+  color: white;
 }
 
 .container {
-    @apply px-5 mx-auto lg:px-8  ;
-}
-
-body {
-    @apply bg-zinc-900 text-zinc-50;
-}
-
-/* menu-btn */
-
-.menu-btn {
-    @apply w-10 h-10 grid place-items-center bg-zinc-50/10 rounded-xl ring-inset ring-1 ring-zinc-50/[0.02] backdrop-blur-2xl hover:bg-zinc-50/15;
-}
-
-/* navbar */
-.navbar {    
-    @apply absolute top-full mt-2 right-0 min-w-40 p-2 bg-zinc-50/10 rounded-2xl ring-inset ring-1 ring-zinc-50/5 scale-90 isolate blur-sm opacity-0 invisible transition-[opacity,transform,filter] md:static md:flex md:items-center md:mt-0 md:opacity-100 md:blur-0 md:visible md:scale-100 backdrop-blur-2xl;
-}
-
-
-.navbar.active {
-    @apply opacity-100 scale-100 blur-0 visible !text-black;
-}
-
-.nav-link {
-    @apply grid items-center h-9 px-4 text-sm font-medium tracking-wide text-black transition-colors;
-}
-
-.navbar .active-box {
-    @apply absolute top-2 left-2 right-2 h-9 bg-zinc-50 rounded-lg -z-10 transition-[top,left] duration-500 
-}
-
-.navbar.active .nav-link {
-    @apply !text-black;
-}
-
-.btn {
-    @apply max-w-max h-9 flex items-center gap-2 px-4 rounded-xl font-medium text-sm ring-1 ring-zinc-50/5 ring-inset transition-[backgrund-color]
-}
-
-.btn-secondary {
-    @apply bg-zinc-50 text-zinc-900 active:bg-zinc-50/80
-}
-
-
-.img-box {
-    @apply bg-zinc-700 overflow-hidden 
-}
-
-.img-cover {
-    @apply w-full h-full object-cover
+  @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
 }
 
 .section {
-    @apply pt-10
+  @apply py-16 sm:py-20 lg:py-24;
 }
 
-.headline-1 {
-    @apply max-h-max;
-    background: -webkit-linear-gradient(0deg,#fafafa , #a1a1aa);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+.glass-card {
+  @apply rounded-[2rem] border border-white/10 bg-slate-900/70 shadow-[0_20px_70px_rgba(2,6,23,0.35)] backdrop-blur-xl;
 }
 
-.headline-1 {
-    @apply text-5xl leading-tight font-semibold lg:text-[50px]
-    lg:leading-[1.15]
+.menu-btn {
+  @apply grid h-11 w-11 place-items-center rounded-2xl border border-white/10 bg-white/10 backdrop-blur-xl transition hover:bg-white/15;
 }
 
-.headline-2 {
-    @apply text-3xl lg:text-4xl lg:leading-tight font-semibold
+.navbar {
+  @apply invisible absolute right-0 top-full mt-3 min-w-[220px] scale-95 rounded-3xl border border-white/10 bg-slate-950/90 p-2 opacity-0 shadow-2xl blur-sm transition-all duration-300 md:static md:mt-0 md:flex md:min-w-0 md:items-center md:gap-1 md:rounded-full md:border-white/10 md:bg-white/5 md:p-1 md:opacity-100 md:blur-0 md:visible md:scale-100;
+}
+
+.navbar.active {
+  @apply visible scale-100 opacity-100 blur-0;
+}
+
+.nav-link {
+  @apply relative flex h-10 items-center rounded-full px-4 text-sm font-medium tracking-wide text-slate-300 transition-all duration-300 md:text-slate-300;
+}
+
+.nav-link:hover {
+  @apply bg-white/10 text-white;
+}
+
+.nav-link.active {
+  @apply bg-white text-slate-950 shadow-lg;
+}
+
+.navbar .active-box {
+  @apply absolute left-2 top-2 -z-10 h-9 rounded-full bg-white shadow-lg transition-[top,left,width,height] duration-300;
 }
 
 .btn {
-    @apply max-w-max h-9 flex items-center gap-2 px-4 rounded-xl font-medium text-sm ring-1 ring-zinc-50/5 ring-inset transition-[backgrond-color]
+  @apply inline-flex h-11 max-w-max items-center justify-center gap-2 rounded-2xl px-5 text-sm font-semibold tracking-wide transition-all duration-300;
 }
 
 .btn-secondary {
-    @apply bg-zinc-50 text-zinc-900 active:bg-zinc-50/80
-}
-
-.btn .material-symbols-rounded {
-    @apply text-[18px]
-}
-
-.btn:has( .material-symbols-rounded) {
-    @apply pr-3
+  @apply border border-white/10 bg-white/10 text-white hover:bg-white/15;
 }
 
 .btn-primary {
-    @apply h-11 bg-sky-400 text-zinc-950 hover:bg-sky-300 active:bg-sky-400
+  @apply bg-gradient-to-r from-sky-400 to-violet-500 text-slate-950 shadow-lg shadow-sky-500/20 hover:-translate-y-0.5 hover:shadow-sky-500/30 active:translate-y-0;
+}
+
+.img-box {
+  @apply overflow-hidden bg-slate-800;
+}
+
+.img-cover {
+  @apply h-full w-full object-cover;
+}
+
+.headline-1 {
+  @apply max-h-max text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-[3.75rem] lg:leading-[1.05];
+  background: linear-gradient(90deg, #f8fafc 0%, #cbd5e1 45%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.headline-2 {
+  @apply text-3xl font-semibold tracking-tight text-white sm:text-4xl;
 }
 
 .title-1 {
-    @apply text-[22px] font-normal
+  @apply text-xl font-semibold text-white;
 }
 
 .label {
-    @apply block 
+  @apply mb-2 block text-sm font-medium text-slate-300;
+}
+
+.text-field {
+  @apply rounded-2xl border border-white/10 bg-slate-950/70 px-4 py-3 text-sm text-white outline-none transition focus:border-sky-400/60 focus:ring-2 focus:ring-sky-400/20;
+}
+
+.section-copy {
+  @apply max-w-2xl text-base leading-8 text-slate-400;
 }

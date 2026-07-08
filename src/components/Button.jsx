@@ -43,11 +43,11 @@ const ButtonPrimary = ({
 }
 
 ButtonPrimary.propTypes = {
-    label:PropTypes.string.isRequired,
-    href:PropTypes.string,
-    target:PropTypes.string,
-    icon:PropTypes.string,
-    classes:PropTypes.string
+    label: PropTypes.string.isRequired,
+    href: PropTypes.string,
+    target: PropTypes.string,
+    icon: PropTypes.node,
+    classes: PropTypes.string
 }
 
 export {

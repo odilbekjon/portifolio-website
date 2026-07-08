@@ -1,30 +1,22 @@
 import { useState } from 'react';
 import axios from 'axios';
-
-// images
-import { FaTelegram } from "react-icons/fa6";
-import { FaSquareInstagram } from "react-icons/fa6";
-import { FaFacebook } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa";
+import { FaTelegram,  FaSquareInstagram, FaFacebook, FaLinkedin, FaGithub } from 'react-icons/fa6';
 
 const Contact = () => {
-
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
-  const BOT_TOKEN = '5505710574:AAGB_2sw7rL8dSHrrznqkj2Nzbg4cFSLjWA'; 
-  const CHAT_ID = '1886251346'; 
+  const BOT_TOKEN = '5505710574:AAGB_2sw7rL8dSHrrznqkj2Nzbg4cFSLjWA';
+  const CHAT_ID = '1886251346';
 
-  
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     const messageText = `
       Name: ${name}
-      Email:${email}
-      Message:${message}
+      Email: ${email}
+      Message: ${message}
     `;
 
     try {
@@ -37,108 +29,54 @@ const Contact = () => {
       setEmail('');
       setMessage('');
     } catch (error) {
-      console.error("Error sending message: ", error);
-      alert("Failed to send message. Please try again.");
+      console.error('Error sending message: ', error);
+      alert('Failed to send message. Please try again.');
     }
   };
 
   return (
     <section id="contact" className="section" data-aos="flip-up">
       <div className="container">
-        <div className="lg:grid lg:grid-cols-2">
-          <div className="">
-            <h2 className="headline-2 mb-5 ">Contact me for collaboration</h2>
-            <p className="mb-5 text-zinc-400 lg:max-w-[45ch]">
-              I am always excited to connect with like-minded professionals,
-              clients, or collaborators who are passionate about building
-              meaningful digital experiences. Whether you have a project in
-              mind, a question, or just want to say hello — feel free to reach
-              out! I open to freelance opportunities, partnerships, and new
-              ideas that challenge and inspire. Let’s build something great
-              together.
+        <div className="glass-card grid gap-8 p-6 sm:p-8 lg:grid-cols-[0.95fr_1.05fr] lg:p-10">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.35em] text-sky-300">Contact</p>
+            <h2 className="headline-2 mt-3">Let’s build something meaningful together.</h2>
+            <p className="section-copy mt-4">
+              I am always excited to connect with like-minded professionals, clients, or collaborators who are passionate about building meaningful digital experiences. Whether you have a project in mind, a question, or just want to say hello — feel free to reach out.
             </p>
-            <div className="flex gap-5 mb-5">
-              <a href="https://t.me/odilbekdev" target="_blank">
-                <FaTelegram size={25} />
-              </a>
-              <a
-                href="https://www.instagram.com/odilbekjondev/"
-                target="_blank"
-              >
-                <FaSquareInstagram size={25} />
-              </a>
-              <a
-                href="https://www.facebook.com/profile.php?id=100094416551089"
-                target="_blank"
-              >
-                <FaFacebook size={25} />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/odilbek-safarov/"
-                target="_blank"
-              >
-                <FaLinkedin size={25} />
-              </a>
-              <a href="https://github.com/odilbekjon" target="_blank">
-                <FaGithub size={25} />
-              </a>
+
+            <div className="mt-6 flex flex-wrap gap-3">
+              {[
+                { href: 'https://t.me/odilbekdev', icon: <FaTelegram size={20} /> },
+                { href: 'https://www.instagram.com/odilbekjondev/', icon: <FaSquareInstagram size={20} /> },
+                { href: 'https://www.facebook.com/profile.php?id=100094416551089', icon: <FaFacebook size={20} /> },
+                { href: 'https://www.linkedin.com/in/odilbek-safarov/', icon: <FaLinkedin size={20} /> },
+                { href: 'https://github.com/odilbekjon', icon: <FaGithub size={20} /> },
+              ].map(({ href, icon }) => (
+                <a key={href} href={href} target="_blank" rel="noreferrer" className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-200 transition hover:-translate-y-0.5 hover:bg-sky-400/10 hover:text-sky-300">
+                  {icon}
+                </a>
+              ))}
             </div>
           </div>
 
-          <form onSubmit={handleSubmit} className="">
-            <div className="flex flex-col gap-5 mb-5 md:grid md:grid-cols-2">
-              <div className="">
-                <label htmlFor="name" className="label">
-                  Name
-                </label>
-                <input
-                  className="w-full text-field p-3 rounded-lg bg-transparent border-2 border-solid outline-none mt-2"
-                  type="text"
-                  name="name"
-                  id="name"
-                  autoComplete="name"
-                  placeholder="name"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  required
-                />
+          <form onSubmit={handleSubmit} className="rounded-[1.5rem] border border-white/10 bg-slate-950/60 p-4 sm:p-6">
+            <div className="mb-5 grid gap-5 md:grid-cols-2">
+              <div>
+                <label htmlFor="name" className="label">Name</label>
+                <input className="text-field w-full" type="text" name="name" id="name" autoComplete="name" placeholder="Your name" value={name} onChange={(e) => setName(e.target.value)} required />
               </div>
-              <div className="">
-                <label htmlFor="email" className="label">
-                  Email
-                </label>
-                <input
-                  className="w-full text-field p-3 rounded-lg bg-transparent border-2 border-solid outline-none mt-2"
-                  type="email"
-                  name="email"
-                  id="email"
-                  autoComplete="email"
-                  placeholder="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                />
+              <div>
+                <label htmlFor="email" className="label">Email</label>
+                <input className="text-field w-full" type="email" name="email" id="email" autoComplete="email" placeholder="Your email" value={email} onChange={(e) => setEmail(e.target.value)} required />
               </div>
             </div>
-            <div className="">
-              <label htmlFor="message" className="label">
-                Message
-              </label>
-              <textarea
-                className="text-field w-full h-36 p-3 rounded-lg bg-transparent border-2 border-solid outline-none mt-2 mb-3 resize-none"
-                name="message"
-                id="message"
-                placeholder="message"
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                required
-              />
+            <div className="mb-5">
+              <label htmlFor="message" className="label">Message</label>
+              <textarea className="text-field h-36 w-full resize-none" name="message" id="message" placeholder="Tell me about your project" value={message} onChange={(e) => setMessage(e.target.value)} required />
             </div>
-            <button
-              type="submit"
-              className="btn btn-primary md:block md:w-full sm:h-auto p-3"
-            >
-              Submit
+            <button type="submit" className="btn btn-primary w-full md:w-auto">
+              Submit message
             </button>
           </form>
         </div>

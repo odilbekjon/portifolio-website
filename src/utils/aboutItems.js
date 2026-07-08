@@ -1,10 +1,10 @@
 export const AboutItems = [
   {
     label: "Project done",
-    number: 5,
+    number: 10,
   },
   {
     label: "Years of experience",
-    number: 3,
+    number: 5,
   },
 ];

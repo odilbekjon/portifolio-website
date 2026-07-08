@@ -1,28 +1,23 @@
-import { sitemap } from "../utils/sitemap";
+import { sitemap } from '../utils/sitemap';
 
 const Footer = () => {
   return (
-    <footer className="section" data-aos="fade-up">
-      <hr />
+    <footer className="pb-10 pt-4" data-aos="fade-up">
       <div className="container">
-        <div className="lg:grid lg:grid-cols-2 mt-5">
-          <div className="mb-10">
-            <h2 className="headline-1 mb-8 lg:max-w-[15ch]">
-              Transform Your Vision into Reality
-            </h2>
-            <a href="https://t.me/odilbekdev">
-              <button className="btn btn-primary">Work with Me</button>
+        <div className="rounded-[2rem] border border-white/10 bg-slate-900/60 p-6 sm:p-8 lg:grid lg:grid-cols-[1fr_0.7fr] lg:items-end lg:gap-10">
+          <div className="mb-8 lg:mb-0">
+            <p className="text-sm font-semibold uppercase tracking-[0.35em] text-sky-300">Let’s connect</p>
+            <h2 className="headline-2 mt-3 ">Turn your vision into a high-performing product.</h2>
+            <a href="https://t.me/odilbekdev" target="_blank" rel="noreferrer" className="btn btn-primary mt-6">
+              Work with me
             </a>
           </div>
 
-          <div className="mb-10">
-            <ul className="flex flex-wrap gap-10 mt-10">
+          <div>
+            <ul className="flex flex-wrap gap-4 sm:gap-8">
               {sitemap.map(({ label, link }, key) => (
-                <li key={key} className="flex">
-                  <a
-                    href={link}
-                    className=" text-sm text-zinc-400 py-1 transition-colors hover:text-zinc-200"
-                  >
+                <li key={key}>
+                  <a href={link} className="text-sm text-slate-400 transition hover:text-white">
                     {label}
                   </a>
                 </li>

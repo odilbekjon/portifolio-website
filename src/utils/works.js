@@ -1,17 +1,17 @@
 // images
-import Img1 from "../assets/edumir.png";
+import Img1 from "../assets/edu-CRM.jpg";
 import Img2 from "../assets/intex.png";
 import Img3 from "../assets/photo_2024-12-22_08-08-55.jpg";
-import Img4 from "../assets/savdo.jpg";
+import Img4 from "../assets/barber.jpg";
 import Img5 from "../assets/young-adults.png";
 import Img6 from "../assets/animals.png";
 
 export const works = [
   {
     imgSrc: Img1,
-    title: "EduMir CRM platform",
+    title: "Young Adults CRM ",
     tags: ["CRM", "React", "Node.js", "REST API"],
-    projectLink: "https://edumir.uz/",
+    projectLink: "https://young-adults-crm.vercel.app/",
   },
   {
     imgSrc: Img2,
@@ -27,13 +27,13 @@ export const works = [
   },
   {
     imgSrc: Img4,
-    title: "Savdo5jieak e-commerce website",
+    title: "Barber app modern website",
     tags: ["API", "MVC", "Development"],
-    projectLink: "https://savdo5jiek.uz/",
+    projectLink: "https://barber-app-wesbite-gc1l.vercel.app/",
   },
   {
     imgSrc: Img5,
-    title: "Young-adults education website",
+    title: "Young Adults education website",
     tags: ["API", "MVC", "Development"],
     projectLink: "https://young-adults.vercel.app/",
   },
